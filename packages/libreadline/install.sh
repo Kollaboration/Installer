@@ -13,8 +13,8 @@ function fail() {
 cd "$HOME/.kpkg/packages/lib$libname"
 
 # download & unpack
-curl -o "$libname-$version.tar.gz" "ftp://ftp.cwru.edu/pub/bash/readline-$version.tar.gz"
-tar -xzf "$libname-$version.tar.gz"
+curl -o "$libname-$version.tar.gz" "ftp://ftp.cwru.edu/pub/bash/readline-$version.tar.gz" || fail "error while downloading"
+tar -xzf "$libname-$version.tar.gz" || fail "error while unpacking"
 
 # compile
 cd "$libname-$version"

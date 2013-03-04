@@ -13,8 +13,8 @@ function fail() {
 cd "$HOME/.kpkg/packages/lib$libname"
 
 # download & unpack
-curl -o "$libname-$version.tar.gz" "http://ftp.gnu.org/pub/gnu/ncurses/ncurses-$version.tar.gz"
-tar -xzf "$libname-$version.tar.gz"
+curl -o "$libname-$version.tar.gz" "http://ftp.gnu.org/pub/gnu/ncurses/ncurses-$version.tar.gz" || fail "error while downloading"
+tar -xzf "$libname-$version.tar.gz" || fail "error while unpacking"
 
 # compile
 cd "$libname-$version"
