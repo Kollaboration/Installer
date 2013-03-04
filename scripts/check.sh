@@ -2,7 +2,6 @@
 
 function fail() {
     echo $1 # show error
-    kpgk usage # show usage
     exit -1
 }
 
