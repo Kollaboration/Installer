@@ -18,8 +18,13 @@ if [ ! -d "$HOME/.kpkg/packages/$1" ]; then
     fail "package $1 not available"
 fi
 
+# check if package has installation script
+if [ ! -f "$HOME/.kpkg/packages/$1/install.sh" ]; then
+    fail "package $1 doesn't have an installation script"
+fi
+
 # check if package is already installed
-if [ -f "$HOME/.kpkg/packages/installed" ]; then
+if [ -f "$HOME/.kpkg/packages/$1/installed" ]; then
     fail "package $1 already installed"
 fi
 
