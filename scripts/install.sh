@@ -2,35 +2,41 @@
 # tries to install a given package with the package
 # script name provided
 
+package=$1
+
 function fail() {
     echo $1 # show error
     exit -1
 }
 
 # check if package name provided
-if [ -z "$1" ]; then
+if [ -z "$package" ]; then
     fail "no package name provided"
 fi
 
 # check if package exists
-if [ ! -d "$HOME/.kpkg/packages/$1" ]; then
-    fail "package $1 not available"
+if [ ! -d "$HOME/.kpkg/packages/$package" ]; then
+    fail "package $package not available"
 fi
 
 # check if package has installation script
-if [ ! -f "$HOME/.kpkg/packages/$1/install.sh" ]; then
-    fail "package $1 doesn't have an installation script"
+if [ ! -f "$HOME/.kpkg/packages/$package/install.sh" ]; then
+    fail "package $package doesn't have an installation script"
 fi
 
 # check if package is already installed
-if [ -f "$HOME/.kpkg/packages/$1/installed" ]; then
-    fail "package $1 already installed"
+if [ -f "$HOME/.kpkg/packages/$package/installed" ]; then
+    fail "package $package already installed"
 fi
 
 # every possible error has been handled
 # we can pass control to the installation
 # script of the package
-echo "installing $1..."
-script="$HOME/.kpkg/packages/$1/install.sh"
+echo "installing $package..."
 shift # remove first command line argument
-source $script $@ # call script with parameters
+source "$HOME/.kpkg/packages/$package/install.sh" $@
+
+# check if package was installed correctly
+if [ ! -f "$HOME/.kpkg/packages/$package/installed" ]; then
+    fail "package $package not installed properly (file packages/$package/installed missing)"
+fi
