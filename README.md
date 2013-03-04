@@ -9,10 +9,15 @@ you install so that other Koders have access to it.
 How it works
 ------------
 
-The idea is that everything is managed by a simple `install` script.
-Running `install setup` should set up some folders that will be needed
-(namely `~/bin`, `~/lib` and `~/include`), it will install itself
-into `~/bin` and, if needed, set up the `~/.bashrc` so that it will
-work. The individual install scripts are to be placed somewhere in
-`~/.install`. The scripts should provide a means of making sure that
-they are not called multiple times to reduce redundancy
+This is like a very basic package management system. Packages are
+in the folder `packages/` (or `~/.kpkg/packages/` if you installed
+it), and are plain bash install scripts. 
+
+To install a packages, type `kpkg install <pkgname>`, and that is
+about all you will need to know. 
+
+If you want to write you own installer scripts, one useful command
+to know is `kpkg require <pkgname>`. This will do everything it
+can to try to install the package, and if it fails, it will return
+nonzero, meaning you can use it like this: `kpkg require <pkgname> 
+|| exit -1`. 
