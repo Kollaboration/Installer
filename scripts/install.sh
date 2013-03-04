@@ -4,7 +4,7 @@
 
 function fail() {
     echo $1 # show error
-    kpgk usage # show usage
+    kpkg usage # show usage
     exit -1
 }
 
@@ -14,7 +14,7 @@ if [ -z "$1" ]; then
 fi
 
 # check if package exists
-if [ ! -d "$HOME/.kpgk/packages/$1" ]; then
+if [ ! -d "$HOME/.kpkg/packages/$1" ]; then
     fail "package $1 not available"
 fi
 
