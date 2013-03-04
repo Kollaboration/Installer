@@ -1,7 +1,7 @@
 #!/bin/bash
 # install lua
 
-version="5.9"
+version="5.2.1"
 platform="linux"
 progname="lua"
 
