@@ -16,7 +16,7 @@ curl -o "readline-$version.tar.gz" "ftp://ftp.cwru.edu/pub/bash/readline-$versio
 tar -xzf "readline-$version.tar.gz"
 
 # compile
-cd "readline-$version.tar.gz"
+cd "readline-$version"
 ./configure || fail "error while configuring"
 make || fail "error while compiling"
 
