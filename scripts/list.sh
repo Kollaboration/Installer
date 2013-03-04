@@ -1,7 +1,7 @@
 #!/bin/bash
 # lists all installed packages
 
-for packagei_dir in $HOME/.kpkg/packages/*; do
+for package_dir in $HOME/.kpkg/packages/*; do
     package=`basename $package_dir`
     if [ -f "$HOME/.kpkg/packages/$package/installed" ]; then
         echo "$package (installed)"
