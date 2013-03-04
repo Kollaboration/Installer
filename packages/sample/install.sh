@@ -1,4 +1,4 @@
 #!/bin/bash
 
-kpkg check sample || kpkg install sample
+kpkg check sample-installed || kpkg install sample-installed
 echo "example"
