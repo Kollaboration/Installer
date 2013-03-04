@@ -7,7 +7,7 @@ function fail() {
     exit -1
 }
 
-if [ -z "$!" ]; then
+if [ -z "$1" ]; then
     fail "no package name provided"
 fi
 
