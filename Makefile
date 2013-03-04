@@ -18,8 +18,8 @@ setup-dirs:
 
 # copy files over
 copy-files:
-	cp -r "packages/*" "$(HOME)/.kpkg/packages/"
-	cp -r scripts/*.sh "$(HOME)/.kpkg/scripts/"
+	cp -r packages "$(HOME)/.kpkg/packages"
+	cp -r scripts/*.sh "$(HOME)/.kpkg/scripts"
 	cp kpkg.sh "$(HOME)/bin/kpkg"
 	chmod +x "$(HOME)/bin/kpkg"
 
