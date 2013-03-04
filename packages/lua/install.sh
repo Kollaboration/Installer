@@ -36,4 +36,4 @@ cp lua.h luaconf.h lualib.h lauxlib.h lua.hpp "$HOME/include" || fail "error whi
 cp liblua.a "$HOME/lib" || fail "error while installing"
 
 # mark package as installed
-touch "$HOME/.kpkg/packages/$libname/installed"
+touch "$HOME/.kpkg/packages/$progname/installed"
