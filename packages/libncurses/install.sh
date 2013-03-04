@@ -1,5 +1,5 @@
 #!/bin/bash
-# install libreadline
+# install libncurses
 
 version="5.9"
 libname="ncurses"
