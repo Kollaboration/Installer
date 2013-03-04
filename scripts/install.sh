@@ -4,7 +4,6 @@
 
 function fail() {
     echo $1 # show error
-    kpkg usage # show usage
     exit -1
 }
 

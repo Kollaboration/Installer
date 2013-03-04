@@ -12,12 +12,12 @@ if [ -z "$1" ]; then
 fi
 
 # check if package exists
-if [ ! -d "$HOME/.kpgk/packages/$1" ]; then
+if [ ! -d "$HOME/.kpkg/packages/$1" ]; then
     fail "package $1 not available"
 fi
 
 # check if package is already installed
-if [ -f "$HOME/.kpkg/packages/installed" ]; then
+if [ -f "$HOME/.kpkg/packages/$1/installed" ]; then
     echo "package $1 is already installed"
 else
     fail "package $1 is not installed yet"
