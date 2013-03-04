@@ -3,18 +3,18 @@
 .PHONY: default install setup-dirs copy-files
 
 default:
-	echo "please run \"make install\" to install kpkg"
+	@echo "please run \"make install\" to install kpkg"
 
 install: setup-dirs copy-files setup-bashrc
 
 # make required directories
 setup-dirs:
-	test ! -d "$(HOME)/bin" && mkdir "$(HOME)/bin"
-	test ! -d "$(HOME)/lib" && mkdir "$(HOME)/lib"
-	test ! -d "$(HOME)/include" && mkdir "$(HOME)/include"
-	test ! -d "$(HOME)/.kpkg" && mkdir "$(HOME)/.kpkg"
-	test ! -d "$(HOME)/.kpkg/scripts" && mkdir "$(HOME)/.kpkg/scripts"
-	test ! -d "$(HOME)/.kpkg/packages" && mkdir "$(HOME)/.kpkg/packages"
+	test -d "$(HOME)/bin" || mkdir "$(HOME)/bin"
+	test -d "$(HOME)/lib" || mkdir "$(HOME)/lib"
+	test -d "$(HOME)/include" || mkdir "$(HOME)/include"
+	test -d "$(HOME)/.kpkg" || mkdir "$(HOME)/.kpkg"
+	test -d "$(HOME)/.kpkg/scripts" || mkdir "$(HOME)/.kpkg/scripts"
+	test -d "$(HOME)/.kpkg/packages" || mkdir "$(HOME)/.kpkg/packages"
 
 # copy files over
 copy-files:
@@ -25,4 +25,4 @@ copy-files:
 
 # setup bashrc (if needed)
 setup-bashrc:
-	source setup-bashrc.sh
+	@source setup-bashrc.sh
