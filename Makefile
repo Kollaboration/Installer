@@ -25,4 +25,4 @@ copy-files:
 
 # setup bashrc (if needed)
 setup-bashrc:
-	@source setup-bashrc.sh
+	@bash setup-bashrc.sh

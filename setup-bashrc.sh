@@ -12,7 +12,7 @@ function setup_bashrc() {
     echo "export PATH=\"\$PATH:\$HOME/bin\"" >> "$HOME/.bashrc"
 }
 
-read -p "Setup .bashrc (y/n)?" choice
+read -p "Setup .bashrc (y/n)? " choice
 case "$choice" in 
   y|Y ) setup_bashrc;;
 esac
