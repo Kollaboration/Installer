@@ -3,7 +3,7 @@
 # set up .bashrc (will be expanded)
 function setup_bashrc() {
     # check for .bash_profile, if it doesn't exist, create it
-    test -f "$HOME/.bash_profile" || echo "#!/bin/bash\ntest -f ~/.bashrc && source ~/.bashrc" > "$HOME/.bash_profile"
+    test -f "$HOME/.bash_profile" || (echo "#!/bin/bash"; echo "test -f ~/.bashrc && source ~/.bashrc") > "$HOME/.bash_profile"
 
     # check for .bashrc, if it doesn't exist, create it
     test -f "$HOME/.bashrc" || echo "#!/bin/bash" > "$HOME/.bashrc"
